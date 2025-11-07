@@ -1,0 +1,20 @@
+{
+  "routerMap": [
+    {
+      "name": "Settings",
+      "pageSourceFile": "src/main/ets/pages/settings.ets",
+      "buildFunction": "settingsBuilder",
+      "data": {
+        "description": "SettingsPage"
+      }
+    },
+    {
+      "name": "History",
+      "pageSourceFile": "src/main/ets/pages/history.ets",
+      "buildFunction": "historyBuilder",
+      "data": {
+        "description": "HistoryPage"
+      }
+    }
+  ]
+}
