@@ -607,6 +607,8 @@ struct Index {
           this.message += `\n[${dateStr}] `
           this.message += "All tests completed."
           this.bShowLoading = false
+          await handleSaveData(this.testList, this.message,
+            `${(this.currentCpuSelection == -1) ? "Any" : this.cpuOptions[this.currentCpuSelection]?.value}`, `${this.nCopies}`)
           return
       }
       // if (newStatus == Status.Completed) {
@@ -997,12 +999,12 @@ struct Index {
                 .width('calc(100% - 48vp)')
                 .enabled(!this.bShowLoading)
             } else {
-              Button("Reset & Save")
+              Button("Reset")
                 .fontSize(this.sz)
                 .fontWeight(FontWeight.Bold)
                 .onClick(async () => {
-                  await handleSaveData(this.testList, this.message,
-                    `${(this.currentCpuSelection == -1) ? "Any" : this.cpuOptions[this.currentCpuSelection]?.value}`, `${this.nCopies}`)
+                  // await handleSaveData(this.testList, this.message,
+                  //   `${(this.currentCpuSelection == -1) ? "Any" : this.cpuOptions[this.currentCpuSelection]?.value}`, `${this.nCopies}`)
                   this.globalStatus = Status.Idle
                   this.message = ''
                   this.bShowLoading = false
